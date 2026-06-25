@@ -70,10 +70,10 @@ export default function Footer() {
 
             <div className="mt-6 space-y-4">
               <a
-                href="mailto:hello@growthix.com"
+                href="mailto:info@growthixstudio.com"
                 className="block text-zinc-300 hover:text-white"
               >
-                hello@growthix.com
+                info@growthixstudio.com
               </a>
 
               <a

@@ -21,13 +21,13 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          <p className="mt-8 max-w-2xl text-lg tracking-[0.1em] leading-relaxed text-zinc-400">
             Strategy, advertising, creative, and operations
             for modern ecommerce brands.
           </p>
         </Reveal>
 
-        <Reveal delay={0.3}>
+        {/* <Reveal delay={0.3}>
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <a
               href="https://wa.me/923008085087"
@@ -50,7 +50,7 @@ export default function Hero() {
               Our Services
             </a>
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );
