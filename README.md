@@ -1,16 +1,31 @@
-# React + Vite
+# Growthix Studio – Premium Ecommerce Growth Agency Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance agency website built with React, Vite, and Tailwind CSS. Designed for ecommerce growth agencies, the platform showcases premium branding, marketplace expertise, and conversion-focused user experiences.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Modern and responsive UI/UX
+* Premium agency-style design
+* Smooth scroll animations using Framer Motion
+* Fully responsive across all devices
+* Marketplace showcase (Amazon, TikTok Shop, Etsy, eBay, Shopify, Temu)
+* Reusable and scalable component architecture
+* Optimized performance with Vite
+* Clean and maintainable codebase
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React.js
+* Vite
+* Tailwind CSS
+* Framer Motion
+* Lucide React
 
-## Expanding the ESLint configuration
+## Services Highlighted
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Marketplace Management
+* Performance Advertising
+* Creative Production
+* Virtual Assistants
+
+Built for ambitious brands looking to scale across modern ecommerce marketplaces.
