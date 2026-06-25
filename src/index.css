@@ -9,3 +9,29 @@ body {
 /* body {
   cursor: url('/growthix-cursor.png') 0 0, auto;
 } */
+
+/* Hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* Infinite Logo Scroll */
+@theme {
+  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}

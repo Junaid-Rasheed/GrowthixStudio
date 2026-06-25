@@ -1,16 +1,19 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
 import { ArrowRight, Menu, X } from "lucide-react";
 import logo from "/logo.png";
-import { useNavigate, useLocation } from "react-router-dom";
+
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const navigate = useNavigate();
-const location = useLocation();
+  const navItems = [
+    { name: "Home", id: "hero" },
+    // { name: "About", id: "about" },
+    { name: "Services", id: "services" },
+    { name: "Our Work", id: "work" },
+    { name: "Contact", id: "contact" },
+  ];
 
-const handleScroll = (id) => {
-  // Already on homepage
-  if (location.pathname === "/") {
+  const handleScroll = (id) => {
     const element = document.getElementById(id);
 
     if (element) {
@@ -19,63 +22,36 @@ const handleScroll = (id) => {
         block: "start",
       });
     }
-  } else {
-    // Go to homepage first, then scroll
-    navigate(`/#${id}`);
-  }
 
-  setIsOpen(false);
-};
+    setIsOpen(false);
+  };
 
-
-  const [isOpen, setIsOpen] = useState(false);
-
-const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Services", path: "services" },
-  { name: "Our Work", path: "work" },
-  { name: "Contact", path: "contact" },
-];
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <button
+          onClick={() => handleScroll("hero")}
+          className="flex items-center"
+        >
           <img
             src={logo}
             alt="Growthix"
             className="h-14 w-auto sm:h-16"
           />
-        </Link>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-10 md:flex">
-          {navItems.map((item) =>
-            item.type === "route" ? (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                className={({ isActive }) =>
-                  `text-[17px] transition ${
-                    isActive
-                      ? "text-[#B8FF1A]"
-                      : "text-zinc-300 hover:text-white"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ) : (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="text-[17px] text-zinc-300 transition hover:text-white"
-              >
-                {item.name}
-              </Link>
-            )
-          )}
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleScroll(item.id)}
+              className="text-[17px] text-zinc-300 transition hover:text-[#B8FF1A]"
+            >
+              {item.name}
+            </button>
+          ))}
         </nav>
 
         {/* CTA */}
@@ -109,33 +85,15 @@ const navItems = [
         }`}
       >
         <div className="space-y-6 border-t border-white/10 bg-[#050505] px-6 py-8">
-          {navItems.map((item) =>
-            item.type === "route" ? (
-              <NavLink
-                key={item.name}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={({ isActive }) =>
-                  `block text-xl ${
-                    isActive
-                      ? "text-[#B8FF1A]"
-                      : "text-zinc-300"
-                  }`
-                }
-              >
-                {item.name}
-              </NavLink>
-            ) : (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className="block text-xl text-zinc-300"
-              >
-                {item.name}
-              </Link>
-            )
-          )}
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleScroll(item.id)}
+              className="block text-xl text-zinc-300"
+            >
+              {item.name}
+            </button>
+          ))}
 
           <a
             href="https://wa.me/923008085087"
@@ -143,11 +101,11 @@ const navItems = [
             rel="noreferrer"
             className="mt-4 inline-flex items-center gap-3 rounded-full bg-[#B8FF1A] px-6 py-3 text-black"
           >
-            Book Free Consultation
+            Book Consultation
             <ArrowRight size={18} />
           </a>
         </div>
       </div>
     </header>
   );
-} 
+}

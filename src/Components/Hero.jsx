@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pt-20 pb-24">
+    <section id="hero" className="mx-auto max-w-7xl px-6 pt-20 pb-16">
       <div className="max-w-6xl">
         <Reveal>
           <span className="text-sm uppercase tracking-[0.4em] text-zinc-400">

@@ -1,44 +1,112 @@
 import Reveal from "./Reveal";
 
 const services = [
-  "Marketplace Management",
-  "Performance Advertising",
-  "Creative Production",
-  "Virtual Assistants",
+  {
+    number: "01",
+    title: "Marketplace Management",
+    description:
+      "Complete management and optimization for Amazon, TikTok Shop, Shopify, Etsy, and eBay stores.",
+  },
+  {
+    number: "02",
+    title: "Performance Advertising",
+    description:
+      "Data-driven advertising strategies designed to maximize ROAS and scale revenue.",
+  },
+  {
+    number: "03",
+    title: "Creative Production",
+    description:
+      "High-converting creatives, UGC ads, product videos, and brand assets built for growth.",
+  },
+  {
+    number: "04",
+    title: "Virtual Assistants",
+    description:
+      "Dedicated ecommerce specialists handling operations, support, listings, and daily tasks.",
+  },
 ];
 
 export default function Services() {
   return (
     <section
       id="services"
-      className="mx-auto max-w-7xl px-4 py-20 sm:px-6 "
+      className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-32"
     >
-      <div className="mb-10">
+      {/* Heading */}
+      <div className="mb-16 text-center">
         <p className="mb-4 text-sm uppercase tracking-[0.3em] text-[#B8FF1A]">
           How We Scale Brands
         </p>
 
-        <h2 className="max-w-3xl text-3xl leading-tight text-white sm:text-5xl">
+        <h2 className="mx-auto max-w-4xl text-4xl leading-tight text-white sm:text-5xl lg:text-7xl">
           Everything Your Brand Needs To Scale.
         </h2>
       </div>
 
-      <div className="border-t border-white/10">
+      {/* Services Grid */}
+      <div className="grid gap-6 md:grid-cols-2">
         {services.map((service, index) => (
-          <Reveal key={service} delay={index * 0.1}>
-            <div className="group border-b border-white/10 py-6 sm:py-8">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-start gap-4 sm:gap-8">
-                  <span className="mt-2 text-sm text-zinc-500">
-                    0{index + 1}
-                  </span>
+          <Reveal key={service.title} delay={index * 0.1}>
+            <div
+              className="
+                group
+                flex
+                h-full
+                flex-col
+                rounded-3xl
+                border border-white/10
+                bg-white/[0.02]
+                p-8
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#B8FF1A]/40
+                hover:bg-white/[0.04]
+              "
+            >
+              {/* Number */}
+              <span className="text-sm text-[#B8FF1A]">
+                {service.number}
+              </span>
 
-                  <h3 className="text-3xl leading-none text-zinc-500 transition-all duration-300 group-hover:translate-x-3 group-hover:text-[#B8FF1A] sm:text-5xl lg:text-7xl">
-                    {service}
-                  </h3>
-                </div>
+              {/* Title */}
+              <h3
+                className="
+                  mt-6
+                  text-3xl
+                  text-white
+                  transition-all
+                  duration-300
+                  group-hover:text-[#B8FF1A]
+                  lg:text-4xl
+                "
+              >
+                {service.title}
+              </h3>
 
-                <div className="hidden h-12 w-12 items-center justify-center rounded-full border border-white/10 transition-all duration-300 group-hover:border-[#B8FF1A] group-hover:bg-[#B8FF1A] md:flex">
+              {/* Description */}
+              <p className="mt-5 flex-grow text-lg leading-relaxed text-zinc-400">
+                {service.description}
+              </p>
+
+              {/* Arrow */}
+              <div className="mt-8 flex justify-end">
+                <div
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-full
+                    border border-white/10
+                    transition-all
+                    duration-300
+                    group-hover:border-[#B8FF1A]
+                    group-hover:bg-[#B8FF1A]
+                  "
+                >
                   <span className="text-xl text-white group-hover:text-black">
                     ↗
                   </span>
